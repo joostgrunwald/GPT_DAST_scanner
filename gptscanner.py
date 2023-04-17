@@ -55,13 +55,13 @@ def analyze_code_with_openai(part):
         engine="fourtopai4",  
         messages=[{  
             "role": "system",  
-            "content": "You are a web vulnerability scanning Artificial Intelligence. You get source code from a website as input and you then identify weaknesses in the code, you identify possible secrets, you identify version numbers and you identify vulnerabilities related to these version numbers."  
+            "content": "You are a web vulnerability scanning Artificial Intelligence. You get source code from a website as input and you then identify weaknesses in the code, you identify possible secrets, you identify all possible version numbers and you identify vulnerabilities related to these version numbers. You also look for other kind of vulnerabilities that are present in this specific code. Note that you focus only on cybersecurity related issues."  
         }, {  
             "role": "user",  
             "content": part  
         }],  
-        temperature=0.5,  
-        max_tokens=800,  
+        temperature=0.7,  
+        max_tokens=1200,  
         top_p=0.95,  
         frequency_penalty=0,  
         presence_penalty=0,  
